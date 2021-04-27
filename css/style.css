@@ -1,0 +1,237 @@
+:root{
+    --primary: #1F1A38;
+    --primary-darker: #1F1B24;
+    --secondary-variant: #03DAC5;
+    --secondary: #5DD39E;
+    --white: #fff;
+    --black: #000;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /* hack box-model */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+    /* GLOBALS */
+body{
+   background-color: var(--primary);
+   font-size: 1.6rem;
+   font-family: 'Roboto', sans-serif;
+}
+p{
+    font-size: 1.8rem;
+    color: var(--white);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+img{
+    width: 100%;
+}
+.container{
+    max-width: 95%;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .container{
+        max-width: 100rem;
+        margin: 0 auto;
+    }
+}
+h1, h2, h3{
+    text-align: center;
+    color: var(--secondary);
+    font-family: 'Roboto', sans-serif;
+}
+h1{font-size: 4rem;}
+h2{font-size: 3rem;}
+h3{font-size: 2.5rem;}
+
+    /*  GRID */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+}
+ @media (min-width: 768px) {
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 3rem;
+    }
+}
+    /* HEADER */
+.header{
+    display: flex;
+    justify-content: center;
+}
+.header__logo{
+    margin: 4rem 0;
+}
+    /* NAVBAR */
+    .nav{
+        background-color: var(--primary-darker);
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+        gap: 2.5rem;
+    }
+    .nav__link{
+        font-size: 1.9rem;
+    }
+    .nav__link--active,
+    .nav__link:hover{
+        color: var(--secondary);
+    }
+    /* PRODUCT-MAIN */
+.product{
+    background-color: var(--primary-darker);
+    padding: 1rem;
+}
+.product__img{
+    width: 100%;
+}
+.product__info{
+    text-align: center;
+}
+.product__name{
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+.product__price{
+    color: var(--secondary);
+}
+.product__name,
+.product__price{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+    /* FOOTER  */
+.footer{
+    background-color: var(--primary-darker);
+    padding: 3rem 0;
+    margin-top: 3rem;
+}
+.footer__text{
+    text-align: center;
+}
+
+    /* GRAPHICS */
+.graphic{
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.graphic--tshirt{
+    grid-row: 2 / 3;
+    background: url(../img/grafico1.jpg);
+}
+.graphic--nodejs{
+    grid-row: 8 / 9;
+    background: url(../img/grafico2.jpg);
+}
+@media (min-width: 768px) {
+    .graphic--nodejs{
+        background: url(../img/grafico2.jpg);
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+    /* ABOUT US */
+.contentaboutus__info{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 2rem;
+    margin: 0 1rem;
+}
+@media (min-width: 768px) {
+    .contentaboutus__info{
+       grid-template-columns: repeat(2, 1fr);
+       column-gap: 2rem;
+    }
+}
+.contentaboutus__img{
+    grid-row: 1/2 ;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .contentaboutus__img{
+        grid-column: 2/3 ;
+    }
+}
+.contentaboutus__info p{
+   margin: 0;
+}
+.contentaboutus__info--icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+    /* ABOUT US - BUY*/
+.contents{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .contents{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+.content{
+    text-align: center;
+    margin: 0 1rem;
+}
+.content__img{
+    width: 100%;
+}
+.content__title{
+    margin: 0;
+}
+
+    /* PRODUCT PAGE */
+@media (min-width: 768px) {
+    .t-shirt{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        
+    }
+    .t-shirt p{
+        margin: 0 0 1rem 0;
+    }
+    .t-shirt__content{
+        position: relative;
+        top: 20%;
+        
+    }
+}
+.form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.form__options{
+    background-color: transparent;
+    border: none;
+    border: .6rem solid var(--primary-darker) ;
+    color: var(--white);
+    padding: .8rem;
+}
+.form__options option{
+    color: var(--black);
+}
+.form__options::placeholder{
+    color: var(--white);
+}
+.form__submit{
+   background-color: var(--secondary);
+   border: none;
+   padding: 1rem;
+   grid-column: 1 / 3;
+   font-size: 1.9rem;
+}
